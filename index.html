@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Server Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">LAN - LIVE</div>
+      <h1>Server-Dashboard</h1>
+      <p class="sub">Minimal, schnell, im ganzen Netzwerk sichtbar.</p>
+    </div>
+    <div class="status">
+      <span class="pulse"></span>
+      <div>
+        <div class="label">Systemstatus</div>
+        <div class="value" id="statusValue">Online</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card big" data-meter>
+      <div class="card-head">
+        <h2>CPU</h2>
+        <span class="badge">Live</span>
+      </div>
+      <div class="meter">
+        <div class="ring" id="cpuRing" style="--value: 0"></div>
+        <div class="meter-info">
+          <div class="num" id="cpuValue">0</div>
+          <div class="unit">%</div>
+          <div class="meta" id="cpuMeta">0 Cores - 0.0 GHz</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" data-meter>
+      <div class="card-head">
+        <h2>RAM</h2>
+        <span class="badge" id="ramTotal">0 GB</span>
+      </div>
+      <div class="bar">
+        <span id="ramBar" style="--value: 0"></span>
+      </div>
+      <div class="row">
+        <div class="num" id="ramUsed">0.0</div>
+        <div class="unit">GB genutzt</div>
+      </div>
+      <div class="meta" id="ramMeta">Frei 0.0 GB</div>
+    </section>
+
+    <section class="card" data-meter>
+      <div class="card-head">
+        <h2>Speicher</h2>
+        <span class="badge" id="diskLabel">C:</span>
+      </div>
+      <div class="bar">
+        <span id="diskBar" style="--value: 0"></span>
+      </div>
+      <div class="row">
+        <div class="num" id="diskUsed">0.00</div>
+        <div class="unit" id="diskUnit">GB genutzt</div>
+      </div>
+      <div class="meta" id="diskMeta">Frei 0.00 TB</div>
+    </section>
+
+    <section class="card" data-meter>
+      <div class="card-head">
+        <h2>Traffic</h2>
+        <span class="badge">LAN</span>
+      </div>
+      <div class="traffic-hist">
+        <div class="traffic-block">
+          <div class="traffic-label">7d</div>
+          <div class="histogram" id="traffic7"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="num" id="netRate">0</div>
+        <div class="unit">Kbit/s</div>
+      </div>
+      <div class="meta" id="netMeta">Up 0 Kbit/s - Down 0 Kbit/s</div>
+    </section>
+
+    <section class="card" data-meter>
+      <div class="card-head">
+        <h2>Prozesse</h2>
+        <span class="badge">Top 3</span>
+      </div>
+      <ul class="list">
+        <li><span id="proc1Name">-</span><em id="proc1Cpu">-</em></li>
+        <li><span id="proc2Name">-</span><em id="proc2Cpu">-</em></li>
+        <li><span id="proc3Name">-</span><em id="proc3Cpu">-</em></li>
+      </ul>
+      <div class="meta" id="procTotal">Gesamt 0 Prozesse</div>
+    </section>
+
+    <section class="card" data-meter>
+      <div class="card-head">
+        <h2>Temperatur</h2>
+        <span class="badge">Sensors</span>
+      </div>
+      <div class="temp">
+        <div class="num" id="tempValue">--</div>
+        <div class="unit">C</div>
+      </div>
+      <div class="meta" id="tempMeta">Sensor nicht verfuegbar</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Letzte Aktualisierung: <span id="timestamp"></span></div>
+    <button class="btn" id="refresh">Aktualisieren</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
