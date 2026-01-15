@@ -1,7 +1,7 @@
 # Server Dashboard
 
-Ein leichtgewichtiges, lokales Dashboard fuer CPU, RAM, Disk, Traffic, Prozesse und Temperatur.
-Das Dashboard laeuft im LAN und zeigt Live-Stats. Traffic-Historie speichert die letzten 7 Tage.
+Ein leichtgewichtiges, lokales Dashboard für CPU, RAM, Disk, Traffic, Prozesse und Temperatur.
+Das Dashboard läuft im LAN und zeigt Live-Stats. Traffic-Historie speichert die letzten 7 Tage.
 
 ## Voraussetzungen
 
@@ -11,7 +11,7 @@ Das Dashboard laeuft im LAN und zeigt Live-Stats. Traffic-Historie speichert die
 ## Start (Windows)
 
 ```powershell
-cd C:\Users\nikit\Desktop\server-dashboard
+cd server-dashboard
 node server.js
 ```
 
@@ -49,5 +49,6 @@ Wenn die Datei nicht existiert, wird sie automatisch erstellt.
 
 ## Hinweise
 
-- Aktualisierung standardmaessig alle 10 Sekunden (Server und Frontend).
-- Wenn andere Geraete nicht zugreifen koennen: Firewall-Port 8080 freigeben.
+- Aktualisierung standardmäßig alle 10 Sekunden (Server und Frontend).
+- Wenn andere Geräte nicht zugreifen können: Firewall-Port 8080 freigeben.
+
